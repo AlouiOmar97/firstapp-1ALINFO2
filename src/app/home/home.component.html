@@ -1,0 +1,19 @@
+<p>home works!</p>
+<p> {{ title }} </p>
+<p> {{ nbr + 5 -2}} </p>
+<p> {{ hello() + ' ' + title }} </p>
+<p> {{ text1 }} </p>
+<button [disabled]="etatBtn" (click)="fillText()" >Click me</button>
+<div *ngIf="text1 == 'Hello'">Hello is typed !</div>
+<input type="text" [(ngModel)]="text1" >
+<div>
+    <div *ngFor="let e of t1, let i=index, let isOdd=odd, let isEven=even">
+        <p>{{ e  }}</p>
+        <p *ngIf="e == 'Bonjour'">
+            {{ e | uppercase | lowercase }}
+        </p>
+        <p><b>Index : </b> {{ i }} </p>
+        <p *ngIf="isOdd">Odd.</p>
+        <hr>
+    </div>
+</div>

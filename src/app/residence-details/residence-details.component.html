@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Residence Details</h1>
+    <div *ngIf="residence">
+        <img src="{{ residence.image }}" [alt]="residence.name" height="200px" width="200px">
+        <p><b>Id : </b> {{ id }} </p>
+        <p><b>Name : </b> {{ residence.name }} </p>
+        <p><b>Address : </b> {{ residence.address }} </p>
+        <p><b>Status : </b> {{ residence.status }}
+            <span *ngIf="residence.status === 'En Construction'"><i class="bi bi-cone-striped"></i></span>
+            <span *ngIf="residence.status === 'Vendu'"><i class="bi bi-x-octagon-fill"></i></span>
+            <span *ngIf="residence.status === 'Disponible'"><i class="bi bi-check-circle-fill"></i></span>
+        </p>
+    </div>
+    <div *ngIf="!residence">
+        <h3>Residence Not Found.</h3>
+        <a routerLink="/residence">Return to List</a>
+    </div>
+</div>

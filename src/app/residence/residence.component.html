@@ -11,7 +11,8 @@
     </div>
 -->
 <div class="container">
-    Search : <input type="text" placeholder="search residence" class="form-control" [(ngModel)]="search">
+    <a routerLink="/residence/add" class="btn btn-link">Add Residence</a><br>
+    <input type="text" placeholder="search residence" class="form-control" [(ngModel)]="search">
     <div class="row">
         <div class="col-3" *ngFor="let residence of listResidences">
             <div *ngIf="residence.address === search || search === ''">
@@ -27,6 +28,8 @@
                       <p class="card-text" *ngIf="residence.showLocation"> <b>Address : </b> {{ residence.address }} </p>
                       <a (click)="toggleLocation(residence.id)" class="btn btn-primary">Show Location</a>
                     <button class="btn btn-success m-2" (click)="likeResidence(residence)" >Like</button>
+                    <a [routerLink]="['/residence/details/', residence.id]" class="btn btn-info">Details</a>
+                    <a [routerLink]="['/residence/update/', residence.id]" class="btn btn-warning m-2">Update</a>
                     </div>
                   </div>
             </div>

@@ -14,6 +14,7 @@ import { ResidenceDetailsComponent } from './residence-details/residence-details
 import { AnnonceModule } from './annonce/annonce.module';
 import { AddResidenceComponent } from './add-residence/add-residence.component';
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
+import { AddApartmentComponent } from './add-apartment/add-apartment.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UpdateResidenceComponent } from './update-residence/update-residence.co
     NotFoundComponent,
     ResidenceDetailsComponent,
     AddResidenceComponent,
-    UpdateResidenceComponent
+    UpdateResidenceComponent,
+    AddApartmentComponent
   ],
   imports: [
     BrowserModule,

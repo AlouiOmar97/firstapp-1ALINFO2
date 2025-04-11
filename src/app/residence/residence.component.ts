@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Residence } from '../core/models/residence';
+import { ResidenceService } from '../services/residence.service';
 
 @Component({
   selector: 'app-residence',
@@ -14,6 +15,12 @@ export class ResidenceComponent {
     {id:4,"name": "El Anber","address":"inconnu", "image":"../../assets/images/R4.jpg", status: "En Construction", showLocation: false}
     ];
   listFavoris:Residence[]=[]
+  constructor(private residenceService: ResidenceService){}
+  ngOnInit(){
+    this.residenceService.findAllResidences().subscribe((data)=>{
+      this.listResidences= data
+    })
+  }
   search=""
     toggleLocation(id: number){
       for (let i = 0; i < this.listResidences.length; i++) {

@@ -15,6 +15,7 @@ import { AnnonceModule } from './annonce/annonce.module';
 import { AddResidenceComponent } from './add-residence/add-residence.component';
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
 import { AddApartmentComponent } from './add-apartment/add-apartment.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AddApartmentComponent } from './add-apartment/add-apartment.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AnnonceModule,
     AppRoutingModule
   ],
